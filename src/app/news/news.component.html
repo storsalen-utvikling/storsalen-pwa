@@ -1,13 +1,13 @@
-<mat-card *ngFor="let post of posts$ | async">
+<mat-card *ngFor="let post of posts$ | async" class="news-ingress-card">
   <mat-card-header>
     <mat-card-title [innerHTML]="post.title | sanitizeSafeHtml"></mat-card-title>
     <mat-card-subtitle>{{ post.dateGmt | date }}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <div *ngIf="!!post.excerpt" [innerHTML]="post.excerpt | sanitizeSafeHtml"></div>
-    <div class="ingres" *ngIf="!!!post.excerpt" [innerHTML]="post.content | ingress"></div>
+    <div *ngIf="!!!post.excerpt" [innerHTML]="post.content | ingress | sanitizeSafeHtml"></div>
   </mat-card-content>
-  <mat-card-footer>
+  <mat-card-footer class="news-ingress-card-footer">
     <a [routerLink]="['/news/post', post.id]" routerLinkActive="active" ariaCurrentWhenActive="page"> Les mer... </a>
   </mat-card-footer>
 </mat-card>

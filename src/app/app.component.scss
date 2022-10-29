@@ -1,0 +1,13 @@
+.app-container {
+  margin: auto;
+  max-width: 640px;
+  min-width: 360px;
+  position: relative;
+}
+
+.app-footer {
+  position: sticky;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}

@@ -1,5 +1,8 @@
-<router-outlet></router-outlet>
-
-<nav mat-tab-nav-bar slot="bottom">
-  <a mat-tab-link routerLink="/news" routerLinkActive="active" ariaCurrentWhenActive="page"> Nyheter </a>
-</nav>
+<div class="app-container">
+  <router-outlet> </router-outlet>
+  <footer class="app-footer">
+    <nav mat-tab-nav-bar>
+      <a mat-tab-link routerLink="/news" routerLinkActive="active" ariaCurrentWhenActive="page"> Nyheter </a>
+    </nav>
+  </footer>
+</div>

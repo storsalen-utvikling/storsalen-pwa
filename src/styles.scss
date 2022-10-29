@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
+
+@font-face{
+  font-family: 'MarkPro';
+  src: url(./assets/fonts/mark/MarkPro.ttf);
+  src: url(./assets/fonts/mark/MarkPro.ttf) format('truetype');
+  font-weight: 500;
+}
+
+@font-face{
+  font-family: 'MarkPro';
+  src: url(./assets/fonts/mark/MarkPro-Medium.ttf);
+  src: url(./assets/fonts/mark/MarkPro-Medium.ttf) format('truetype');
+  font-weight: 800;
+}
+
+@font-face{
+  font-family: 'MarkPro';
+  src: url(./assets/fonts/mark/MarkPro-Heavy.ttf);
+  src: url(./assets/fonts/mark/MarkPro-Heavy.ttf) format('truetype');
+  font-weight: 900;
+}
+
+@font-face{
+  font-family: 'MarkPro';
+  src: url(./assets/fonts/mark/MarkPro-Light.ttf);
+  src: url(./assets/fonts/mark/MarkPro-Light.ttf) format('truetype');
+  font-weight: 200;
+}
+
+$custom: mat.define-typography-config(
+  $font-family: MarkPro,
+);
+
+@include mat.core($custom);
+
+html, body { height: 100%; }
