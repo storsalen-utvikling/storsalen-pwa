@@ -35,4 +35,7 @@ $custom: mat.define-typography-config(
 
 @include mat.core($custom);
 
-html, body { height: 100%; }
+html, body {
+  height: 100%;
+  margin: 0;
+}

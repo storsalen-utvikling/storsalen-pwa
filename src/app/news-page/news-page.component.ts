@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { NewsService } from './service/news.service';
 
 @Component({
-  selector: 'app-news',
-  templateUrl: './news.component.html',
-  styleUrls: ['./news.component.scss'],
+  selector: 'app-news-page',
+  templateUrl: './news-page.component.html',
+  styleUrls: ['./news-page.component.scss'],
 })
-export class NewsComponent {
+export class NewsPageComponent {
   posts$ = this.newsService.getPosts(1);
 
   constructor(private newsService: NewsService) {}

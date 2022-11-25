@@ -8,10 +8,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
-import { NewsModule } from './news/news.module';
+import { NewsPageModule } from './news-page/news-page.module';
+import { RootRouterComponent } from './root-router/root-router.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, RootRouterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -24,7 +25,7 @@ import { NewsModule } from './news/news.module';
     BrowserAnimationsModule,
     HttpClientModule,
     MatTabsModule,
-    NewsModule,
+    NewsPageModule,
   ],
   bootstrap: [AppComponent],
 })

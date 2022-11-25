@@ -1,13 +1,14 @@
 .app-container {
-  margin: auto;
+  position: relative;
+  height: 100%;
   max-width: 640px;
   min-width: 360px;
-  position: relative;
+  margin: auto;
 }
 
-.app-footer {
-  position: sticky;
-  right: 0;
-  left: 0;
-  bottom: 0;
+.app-root-router {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: stretch;
 }
