@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
-import { RouterLinkWithHref } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 import { NewsPageComponent } from './news-page.component';
@@ -11,6 +11,6 @@ import { AppRoutingModule } from '../app-routing.module';
 @NgModule({
   declarations: [NewsPageComponent, IngressPipe],
   exports: [NewsPageComponent],
-  imports: [SharedModule, AppRoutingModule, MatCardModule, RouterLinkWithHref, CommonModule],
+  imports: [SharedModule, AppRoutingModule, MatCardModule, RouterLink, CommonModule],
 })
 export class NewsPageModule {}
