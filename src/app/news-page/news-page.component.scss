@@ -1,3 +1,17 @@
+.scroll {
+  height: 100%;
+  width: 100%;
+}
+
+.spinner {
+  margin: 50px auto 50px auto;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
 .news-ingress-card {
   margin: 20px 10px;
 }
@@ -16,11 +30,20 @@
 }
 
 :host ::ng-deep img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
 }
 
 :host ::ng-deep .wp-block-image {
+  margin: 10px 20px;
+}
+
+:host ::ng-deep video {
+  max-width: 100%;
+  height: auto;
+}
+
+:host ::ng-deep wp-block-video {
   margin: 10px 20px;
 }
 
