@@ -12,6 +12,7 @@ export const routes: Routes = [
   { path: 'gift-page', component: GiftPageComponent },
   { path: 'refill-page', component: RefillPageComponent },
   { path: 'profile-page', component: ProfilePageComponent },
+  { path: '', redirectTo: 'news-page', pathMatch: 'full' },
 ];
 
 @NgModule({
