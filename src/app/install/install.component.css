@@ -1,0 +1,9 @@
+.install-banner {
+  position: sticky;
+  display: flex;
+  flex-direction: row;
+  top: 0;
+  padding: 10px;
+  background-color: #EEEEEE;
+  justify-content: space-around;
+}
