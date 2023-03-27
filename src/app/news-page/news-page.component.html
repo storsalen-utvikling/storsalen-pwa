@@ -1,5 +1,5 @@
 <cdk-virtual-scroll-viewport autosize class="scroll">
-  <mat-card *cdkVirtualFor="let post of posts" class="news-ingress-card">
+  <mat-card *cdkVirtualFor="let post of posts$ | async" class="news-ingress-card">
     <mat-card-header>
       <mat-card-title [innerHTML]="post.title | sanitizeSafeHtml"></mat-card-title>
       <mat-card-subtitle>{{ post.dateGmt | date }}</mat-card-subtitle>
@@ -14,5 +14,9 @@
       </a>
     </mat-card-footer>
   </mat-card>
-  <mat-progress-spinner [mode]="'indeterminate'" [diameter]="50" class="spinner"> </mat-progress-spinner>
+  <mat-progress-spinner
+    [mode]="'indeterminate'"
+    [diameter]="50"
+    class="spinner"
+    *ngIf="isLoading$ | async"></mat-progress-spinner>
 </cdk-virtual-scroll-viewport>

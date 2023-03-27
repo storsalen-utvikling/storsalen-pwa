@@ -1,4 +1,5 @@
 .install-banner {
+  z-index: 1000;
   position: sticky;
   display: flex;
   flex-direction: row;

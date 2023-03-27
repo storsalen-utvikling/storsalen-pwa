@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { NewsService } from './service/news.service';
 import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
-import { filter, pairwise, startWith, switchMap, throttleTime } from 'rxjs';
+import { filter, Observable, pairwise, Subscription, tap, throttleTime } from 'rxjs';
 import { NewsPost } from './news.types';
 import { map } from 'rxjs/operators';
 
@@ -11,29 +11,27 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./news-page.component.scss'],
 })
 export class NewsPageComponent implements AfterViewInit {
+  private _loaderSubscription?: Subscription;
+
   @ViewChild(CdkVirtualScrollViewport)
   scroller!: CdkVirtualScrollViewport;
-
-  currentPage = 1;
-  posts: NewsPost[] = [];
+  posts$: Observable<NewsPost[]> = this.newsService.posts$.pipe(tap(() => this.scroller?.checkViewportSize()));
+  isLoading$: Observable<boolean> = this.newsService.isLoading$;
 
   constructor(private newsService: NewsService) {}
 
   ngAfterViewInit(): void {
-    this.scroller
+    this.newsService.loadHeadPosts();
+    this._loaderSubscription = this.scroller
       .elementScrolled()
       .pipe(
         map(() => this.scroller.measureScrollOffset('bottom')),
         pairwise(),
         filter(([prevOffset, nextOffset]) => nextOffset < prevOffset && nextOffset < 140),
-        throttleTime(1000),
-        map(_ => this.newsService.getPosts(this.currentPage++)),
-        startWith(this.newsService.getPosts(this.currentPage++)),
-        switchMap(posts => posts)
+        throttleTime(1000)
       )
-      .subscribe(value => {
-        this.posts = [...this.posts, ...value];
-        this.scroller.checkViewportSize();
+      .subscribe(() => {
+        this.newsService.loadTailPosts();
       });
   }
 }

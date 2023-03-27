@@ -34,6 +34,11 @@
   height: auto;
 }
 
+:host ::ng-deep iframe {
+  max-width: 100%;
+  height: auto;
+}
+
 :host ::ng-deep .wp-block-image {
   margin: 10px 20px;
 }
