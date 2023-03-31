@@ -10,6 +10,8 @@ import { MatCardModule } from '@angular/material/card';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { ScrollingModule as ExperimentalScrollingModule } from '@angular/cdk-experimental/scrolling';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [NewsPageComponent, IngressPipe],
@@ -23,6 +25,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     ScrollingModule,
     ExperimentalScrollingModule,
     MatProgressSpinnerModule,
+    MatIconModule,
+    MatButtonModule,
   ],
 })
 export class NewsPageModule {}

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { NewsService } from './service/news.service';
 import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
 import { filter, Observable, pairwise, Subscription, tap, throttleTime } from 'rxjs';
@@ -10,7 +10,7 @@ import { map } from 'rxjs/operators';
   templateUrl: './news-page.component.html',
   styleUrls: ['./news-page.component.scss'],
 })
-export class NewsPageComponent implements AfterViewInit {
+export class NewsPageComponent implements AfterViewInit, OnInit {
   private _loaderSubscription?: Subscription;
 
   @ViewChild(CdkVirtualScrollViewport)
@@ -20,8 +20,15 @@ export class NewsPageComponent implements AfterViewInit {
 
   constructor(private newsService: NewsService) {}
 
-  ngAfterViewInit(): void {
+  loadHeadPosts() {
     this.newsService.loadHeadPosts();
+  }
+
+  ngOnInit() {
+    this.loadHeadPosts();
+  }
+
+  ngAfterViewInit(): void {
     this._loaderSubscription = this.scroller
       .elementScrolled()
       .pipe(

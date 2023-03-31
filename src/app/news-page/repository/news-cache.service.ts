@@ -14,7 +14,7 @@ export class NewsCacheService {
   }
 
   async cacheNewsPosts(postsToCache: NewsPost[]) {
-    await newsDb.newsPosts.bulkAdd(postsToCache.map(this.mapToRow));
+    await newsDb.newsPosts.bulkPut(postsToCache.map(this.mapToRow));
   }
 
   async isCached(id: number): Promise<boolean> {

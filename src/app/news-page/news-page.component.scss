@@ -12,6 +12,15 @@
   background: transparent;
 }
 
+.news-refresh {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  background-color: #449394;
+}
+
 .news-ingress-card {
   margin: 20px 10px;
 }

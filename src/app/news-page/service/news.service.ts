@@ -15,6 +15,8 @@ export class NewsService {
   private static postsPerPage = '5';
   private static wpUrl = 'https://storsalen.no/wp-json/wp/v2/posts';
 
+  private _clearPostsOnNextLoad = false;
+
   private readonly _posts$ = new BehaviorSubject<Map<number, NewsPost>>(new Map<number, NewsPost>());
   private readonly _isLoading$ = new BehaviorSubject<boolean>(false);
 
@@ -40,6 +42,7 @@ export class NewsService {
   }
 
   loadHeadPosts() {
+    this._clearPostsOnNextLoad = true;
     this.loadPosts(0);
   }
 
@@ -78,6 +81,11 @@ export class NewsService {
         tap(posts => this.newsCache.cacheNewsPosts(posts))
       )
       .subscribe(posts => {
+        if (this._clearPostsOnNextLoad) {
+          this._posts$.value.clear();
+          this._clearPostsOnNextLoad = false;
+        }
+
         posts.forEach(post => this._posts$.value.set(post.id, post));
         this._isLoading$.next(false);
         this._posts$.next(this._posts$.value);
