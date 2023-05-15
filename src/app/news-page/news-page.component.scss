@@ -73,3 +73,7 @@
   font-size: 18px;
   line-height: 27px;
 }
+
+:host ::ng-deep a {
+  word-break: break-all;
+}
