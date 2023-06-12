@@ -69,7 +69,7 @@
     },
     {
       "src": "assets/icons/icon-m-120.png",
-      "sizes": "128x128",
+      "sizes": "120x120",
       "type": "image/png",
       "purpose": "maskable"
     },
@@ -93,7 +93,7 @@
     },
     {
       "src": "assets/icons/icon-m-180.png",
-      "sizes": "152x152",
+      "sizes": "180x180",
       "type": "image/png",
       "purpose": "maskable"
     },
