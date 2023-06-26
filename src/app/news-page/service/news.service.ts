@@ -21,9 +21,7 @@ export class NewsService {
   private readonly _isLoading$ = new BehaviorSubject<boolean>(false);
 
   constructor(private http: HttpClient, private newsCache: NewsCacheService) {
-    this.populateFromCache()
-      .then(() => console.log('Populated!'))
-      .catch(console.error);
+    this.populateFromCache().catch(console.error);
   }
 
   get posts$() {

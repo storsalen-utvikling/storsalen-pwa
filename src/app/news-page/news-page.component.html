@@ -1,9 +1,4 @@
 <cdk-virtual-scroll-viewport autosize class="scroll">
-  <div class="news-refresh">
-    <button mat-icon-button aria-label="Oppdater nyheter" (click)="loadHeadPosts()">
-      <mat-icon>refresh</mat-icon>
-    </button>
-  </div>
   <mat-card *cdkVirtualFor="let post of posts$ | async" class="news-ingress-card">
     <mat-card-header>
       <mat-card-title [innerHTML]="post.title | sanitizeSafeHtml"></mat-card-title>
