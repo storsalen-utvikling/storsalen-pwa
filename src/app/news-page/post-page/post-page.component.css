@@ -1,0 +1,47 @@
+:host ::ng-deep img {
+  max-width: 100%;
+  height: auto;
+}
+
+:host ::ng-deep iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+:host ::ng-deep .wp-block-image {
+  margin: 10px 20px;
+}
+
+:host ::ng-deep video {
+  max-width: 100%;
+  height: auto;
+}
+
+:host ::ng-deep wp-block-video {
+  margin: 10px 20px;
+}
+
+:host ::ng-deep hr {
+  display: none;
+}
+
+:host ::ng-deep h2 {
+  font-size: 20px;
+}
+
+:host ::ng-deep p {
+  font-size: 18px;
+  line-height: 27px;
+}
+
+:host ::ng-deep a {
+  word-break: break-all;
+}
+
+.post-toolbar {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+}

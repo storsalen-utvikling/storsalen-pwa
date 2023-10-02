@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { CommonModule } from '@angular/common';
-
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { NewsPageComponent } from './news-page.component';
 import { IngressPipe } from './pipes/ingress.pipe';
 import { SharedModule } from '../shared/shared.module';
@@ -12,9 +11,11 @@ import { ScrollingModule as ExperimentalScrollingModule } from '@angular/cdk-exp
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { PostPageComponent } from './post-page/post-page.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
-  declarations: [NewsPageComponent, IngressPipe],
+  declarations: [NewsPageComponent, IngressPipe, PostPageComponent],
   exports: [NewsPageComponent],
   imports: [
     SharedModule,
@@ -27,6 +28,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatProgressSpinnerModule,
     MatIconModule,
     MatButtonModule,
+    MatToolbarModule,
+    NgOptimizedImage,
   ],
 })
 export class NewsPageModule {}

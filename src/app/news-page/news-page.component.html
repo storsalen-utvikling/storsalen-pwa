@@ -9,7 +9,7 @@
       <div *ngIf="!post.excerpt" [innerHTML]="post.content | ingress | sanitizeSafeHtml"></div>
     </mat-card-content>
     <mat-card-footer class="news-ingress-card-footer">
-      <a [routerLink]="['/news-page/post', post.id]" routerLinkActive="active" ariaCurrentWhenActive="page">
+      <a [routerLink]="['/news/post', post.id]" routerLinkActive="active" ariaCurrentWhenActive="page">
         Les mer...
       </a>
     </mat-card-footer>

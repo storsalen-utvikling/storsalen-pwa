@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { map, tap } from 'rxjs/operators';
 
 import type { WP_REST_API_Posts } from 'wp-types';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, filter } from 'rxjs';
 import { NewsPost } from '../news.types';
 import { NewsCacheService } from '../repository/news-cache.service';
 
@@ -28,6 +28,14 @@ export class NewsService {
     return this._posts$.pipe(
       map(posts => Array.from(posts.values())),
       map(posts => posts.sort((first, second) => this.compareDates(second.dateGmt, first.dateGmt)))
+    );
+  }
+
+  getPost(id: number) {
+    return this._posts$.pipe(
+      map(posts => posts.get(id)),
+      filter(post => !!post),
+      map(post => post!)
     );
   }
 

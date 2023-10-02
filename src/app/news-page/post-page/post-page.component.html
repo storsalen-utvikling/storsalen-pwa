@@ -1,0 +1,11 @@
+<mat-toolbar *ngIf="post$ | async as post" color="primary" class="post-toolbar">
+  <button mat-icon-button routerLink="/news">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+  <span>{{ post.title }}</span>
+</mat-toolbar>
+<div *ngIf="post$ | async as post">
+  <h1>{{ post.title }}</h1>
+  <img *ngIf="post.mediaUrl" [ngSrc]="post.mediaUrl" width="100%" height="auto" />
+  <div [innerHTML]="post.content | sanitizeSafeHtml"></div>
+</div>
