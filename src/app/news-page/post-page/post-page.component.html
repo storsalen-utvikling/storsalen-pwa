@@ -2,10 +2,10 @@
   <button mat-icon-button routerLink="/news">
     <mat-icon>chevron_left</mat-icon>
   </button>
-  <span>{{ post.title }}</span>
+  <span class="post-toolbar-title">{{ post.title }}</span>
 </mat-toolbar>
-<div *ngIf="post$ | async as post">
+<div *ngIf="post$ | async as post" class="post-content">
   <h1>{{ post.title }}</h1>
-  <img *ngIf="post.mediaUrl" [ngSrc]="post.mediaUrl" width="100%" height="auto" />
+  <img *ngIf="post.mediaUrl" [ngSrc]="post.mediaUrl" width="100%" height="auto" [alt]="post.title" />
   <div [innerHTML]="post.content | sanitizeSafeHtml"></div>
 </div>

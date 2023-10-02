@@ -45,3 +45,14 @@
   position: sticky;
   top: 0;
 }
+
+.post-toolbar-title {
+  text-overflow: ellipsis;
+  width: calc(100%);
+  overflow: hidden;
+  text-align: right;
+}
+
+.post-content {
+  padding: 10px;
+}
