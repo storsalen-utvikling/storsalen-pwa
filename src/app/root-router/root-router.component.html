@@ -2,14 +2,36 @@
   <router-outlet></router-outlet>
 </mat-tab-nav-panel>
 <footer class="app-navbar">
-  <nav mat-tab-nav-bar backgroundColor="primary" [tabPanel]="tabPanel">
-    <a
-      mat-tab-link
-      *ngFor="let link of links"
-      (click)="activeLink = link"
-      [active]="activeLink === link"
-      [routerLink]="link">
-      {{ link }}
+  <nav mat-tab-nav-bar class="nav-bar" [tabPanel]="tabPanel">
+    <a mat-tab-link (click)="activeLink = 'news'" [active]="activeLink === 'news'" routerLink="/news">
+      <p class="nav-link-content" [ngClass]="{ active: activeLink === 'news' }">
+        <mat-icon class="nav-link-icon">circle</mat-icon>
+        Nyheter
+      </p>
+    </a>
+    <a mat-tab-link (click)="activeLink = 'calendar'" [active]="activeLink === 'calendar'" routerLink="/calendar">
+      <p class="nav-link-content" [ngClass]="{ active: activeLink === 'calendar' }">
+        <mat-icon class="nav-link-icon">calendar_month</mat-icon>
+        Kalender
+      </p>
+    </a>
+    <a mat-tab-link (click)="activeLink = 'refill'" [active]="activeLink === 'refill'" routerLink="/refill">
+      <p class="nav-link-content" [ngClass]="{ active: activeLink === 'refill' }">
+        <mat-icon class="nav-link-icon">favorite</mat-icon>
+        Påfyll
+      </p>
+    </a>
+    <a mat-tab-link (click)="activeLink = 'gift'" [active]="activeLink === 'gift'" routerLink="/gift">
+      <p class="nav-link-content" [ngClass]="{ active: activeLink === 'gift' }">
+        <mat-icon class="nav-link-icon">redeem</mat-icon>
+        Gave
+      </p>
+    </a>
+    <a mat-tab-link (click)="activeLink = 'profile'" [active]="activeLink === 'profile'" routerLink="/profile">
+      <p class="nav-link-content" [ngClass]="{ active: activeLink === 'profile' }">
+        <mat-icon class="nav-link-icon">person</mat-icon>
+        Min side
+      </p>
     </a>
   </nav>
 </footer>

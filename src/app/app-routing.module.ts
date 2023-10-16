@@ -21,10 +21,10 @@ export const routes: Routes = [
       },
     ],
   },
-  { path: 'calendar-page', component: CalendarPageComponent },
-  { path: 'gift-page', component: GiftPageComponent },
-  { path: 'refill-page', component: RefillPageComponent },
-  { path: 'profile-page', component: ProfilePageComponent },
+  { path: 'calendar', component: CalendarPageComponent },
+  { path: 'refill', component: RefillPageComponent },
+  { path: 'gift', component: GiftPageComponent },
+  { path: 'profile', component: ProfilePageComponent },
   { path: '', redirectTo: 'news', pathMatch: 'full' },
 ];
 

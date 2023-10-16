@@ -8,3 +8,38 @@
 .app-content {
   flex: 1;
 }
+
+.nav-bar {
+  background-color: #ffffff;
+  border-top: solid #eeeeee 1px;
+}
+
+.nav-link-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #aaaaaa;
+  font-size: 0.8em;
+  margin: 0;
+}
+
+.nav-link-content.active {
+  color: #1a5970;
+}
+
+.nav-link-icon {
+  font-size: xx-large;
+  width: auto;
+  height: auto;
+}
+
+::ng-deep .mdc-tab {
+  padding-right: 4px !important;
+  padding-left: 4px !important;
+}
+
+::ng-deep .mdc-tab-indicator {
+  display: none !important;
+}

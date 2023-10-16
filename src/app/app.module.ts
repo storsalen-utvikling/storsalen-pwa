@@ -11,6 +11,7 @@ import { RootRouterComponent } from './root-router/root-router.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { InstallComponent } from './install/install.component';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [AppComponent, RootRouterComponent, InstallComponent],
@@ -26,6 +27,7 @@ import { MatButtonModule } from '@angular/material/button';
       registrationStrategy: 'registerWhenStable:30000',
     }),
     MatButtonModule,
+    MatIconModule,
   ],
   bootstrap: [AppComponent],
 })
