@@ -13,7 +13,7 @@ import { map } from 'rxjs/operators';
 export class PostPageComponent {
   post$: Observable<NewsPost> = this.route.paramMap.pipe(
     map(params => parseInt(params.get('id')!)),
-    mergeMap(id => this.newsService.getPost(id)),
+    mergeMap(id => this.newsService.getPost(id))
   );
 
   constructor(private newsService: NewsService, private route: ActivatedRoute) {}
