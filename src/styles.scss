@@ -1,50 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
-@use "@angular/material" as mat;
+@use '@angular/material' as mat;
 
-@font-face{
+@font-face {
+  font-family: 'MarkPro';
+  src: url(./assets/fonts/mark/MarkPro-ExtraLight.ttf);
+  src: url(./assets/fonts/mark/MarkPro-ExtraLight.ttf) format('truetype');
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'MarkPro';
+  src: url(./assets/fonts/mark/MarkPro-Light.ttf);
+  src: url(./assets/fonts/mark/MarkPro-Light.ttf) format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
   font-family: 'MarkPro';
   src: url(./assets/fonts/mark/MarkPro.ttf);
   src: url(./assets/fonts/mark/MarkPro.ttf) format('truetype');
   font-weight: 500;
 }
 
-@font-face{
+@font-face {
   font-family: 'MarkPro';
   src: url(./assets/fonts/mark/MarkPro-Medium.ttf);
   src: url(./assets/fonts/mark/MarkPro-Medium.ttf) format('truetype');
   font-weight: 800;
 }
 
-@font-face{
+@font-face {
   font-family: 'MarkPro';
   src: url(./assets/fonts/mark/MarkPro-Heavy.ttf);
   src: url(./assets/fonts/mark/MarkPro-Heavy.ttf) format('truetype');
   font-weight: 900;
 }
 
-@font-face{
-  font-family: 'MarkPro';
-  src: url(./assets/fonts/mark/MarkPro-Light.ttf);
-  src: url(./assets/fonts/mark/MarkPro-Light.ttf) format('truetype');
-  font-weight: 200;
-}
-
-$custom: mat.define-legacy-typography-config(
-  $font-family: MarkPro,
+$mark: mat.define-typography-config(
+  $font-family: 'MarkPro',
 );
 
-// TODO(v15): As of v15 mat.legacy-core no longer includes default typography styles.
-//  The following line adds:
-//    1. Default typography styles for all components
-//    2. Styles for typography hierarchy classes (e.g. .mat-headline-1)
-//  If you specify typography styles for the components you use elsewhere, you should delete this line.
-//  If you don't need the default component typographies but still want the hierarchy styles,
-//  you can delete this line and instead use:
-//    `@include mat.legacy-typography-hierarchy($custom);`
-@include mat.all-legacy-component-typographies($custom);
-@include mat.legacy-core();
+@include mat.core();
+@include mat.all-component-typographies($mark);
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
 }
