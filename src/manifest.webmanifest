@@ -1,8 +1,8 @@
 {
   "name": "storsalen-pwa",
   "short_name": "storsalen-pwa",
-  "theme_color": "#315a71",
-  "background_color": "#315a71",
+  "theme_color": "#1a5970",
+  "background_color": "#1a5970",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
