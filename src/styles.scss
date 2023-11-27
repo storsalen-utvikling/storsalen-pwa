@@ -40,7 +40,41 @@ $mark: mat.define-typography-config(
   $font-family: 'MarkPro',
 );
 
+$storsalen-primary: mat.define-palette((
+  50: #d5f2ff,
+  100: #b3dbec,
+  200: #93bfd5,
+  300: #70a4bc,
+  400: #558faa,
+  500: #377c98,
+  600: #2a6d86,
+  700: #1a5970,
+  800: #09465b,
+  900: #003143,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  )
+), 700);
+
+$storsalen-light: mat.define-light-theme((
+  color: (
+    primary: $storsalen-primary,
+    accent: $storsalen-primary,
+  ),
+  density: 0,
+));
+
 @include mat.core();
+@include mat.all-component-colors($storsalen-light);
 @include mat.all-component-typographies($mark);
 
 html,
