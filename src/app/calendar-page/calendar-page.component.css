@@ -1,0 +1,26 @@
+.scroll {
+  height: 100%;
+  width: 100%;
+}
+
+.spinner {
+  margin: 50px auto 50px auto;
+}
+
+.events-toolbar {
+  height: 40px;
+  font-weight: bold;
+}
+
+.event-link {
+  color: orange;
+  font-weight: 900;
+}
+
+.event-author {
+  font-style: oblique;
+}
+
+.event-card {
+  margin: 20px 10px;
+}

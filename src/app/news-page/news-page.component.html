@@ -1,5 +1,5 @@
 <mat-toolbar color="primary" class="news-toolbar">
-  <span class="post-toolbar-title">Siste nytt</span>
+  <span>Siste nytt</span>
 </mat-toolbar>
 <cdk-virtual-scroll-viewport autosize class="scroll">
   <mat-card *cdkVirtualFor="let post of posts$ | async" class="news-ingress-card">
